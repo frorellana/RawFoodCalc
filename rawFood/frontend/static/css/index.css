@@ -62,6 +62,6 @@ html, body {
 
 #sidebar {
   border-left: solid 1px lightgray;
-  width: 30vh;
+  min-width: 30vh;
   padding: 10px;
 }

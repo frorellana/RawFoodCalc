@@ -20,7 +20,7 @@ export default function ProductCard({name = 'Product', image = '/static/images/b
       
     // </div>
 
-    <div className="col-2">
+    <div className="col">
       <div className="card">
         <div className="card-body">
             <h5 className="card-title">{name}</h5>
