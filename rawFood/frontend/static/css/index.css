@@ -23,7 +23,7 @@ html, body {
 }
 
 
-.productCard {
+/* .productCard {
   width: 500px;
   height: 100px;
   display: flex;
@@ -31,16 +31,16 @@ html, body {
   margin: 10px;
   box-shadow: 0px 4px 6px 0px rgba(194,194,194,1);
   
-}
+} */
 
-#cardText {
+/* #cardText {
   padding: 10px;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 #frontDisplay {
   display: flex;
@@ -48,14 +48,24 @@ html, body {
   justify-content: space-between;
   width: 100%;
   flex: 1; /* Take up available space */
-  
+
 
   
 }
 #ingridentSection {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
   flex: 1;
   
+}
+
+.partSection {
+  padding: 10px;
+
+  
+  
+ 
 }
 
 
@@ -65,3 +75,25 @@ html, body {
   min-width: 30vh;
   padding: 10px;
 }
+
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+
+
+
+.container{
+ 
+  
+  margin-left: 0!important;
+  margin-right: 0!important;
+
+  padding: 3px 5px!important;
+
+
+ 
+}
+

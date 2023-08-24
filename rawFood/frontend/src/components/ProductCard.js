@@ -5,7 +5,7 @@ name,
 image,
 
 */
-export default function ProductCard({name = 'Product', image = '/static/images/blank.png', desc='Description of product.', animal}) {   
+export default function ProductCard({name = 'Product', path = '/static/images/chickenLiver.png', desc='Description of product.', animal}) {   
   function selectOnClick() {
     console.log(animal, name);
   }
@@ -21,12 +21,13 @@ export default function ProductCard({name = 'Product', image = '/static/images/b
     // </div>
 
     <div className="col">
-      <div className="card">
+      <div className="card h-100">
         <div className="card-body">
             <h5 className="card-title">{name}</h5>
             <p className="card-text">{desc}</p>
+            <a href="#" class="btn btn-primary stretched-link">Add</a>
         </div>
-        <img src={image}/>
+        <img className="card-img-bottom" src={path}/>
       </div>
     </div>
   );

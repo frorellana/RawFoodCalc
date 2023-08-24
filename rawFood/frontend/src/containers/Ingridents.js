@@ -4,6 +4,7 @@ import ProductCard from '../components/ProductCard';
 
 export default function Ingridents() {
   const [animals, setAnimals] = useState([]);
+  const [images, setImages] = useState([]);
   function formatWord(word) {
     word = word.toLowerCase()
     const arr = word.split(' ');
@@ -19,7 +20,7 @@ export default function Ingridents() {
     // Only display if fetching is successful
     // Sample
   
-  
+    fetchImages()
     fetch('/api/animalPartRatio')  // Update the URL based on your API endpoint
     .then(response => response.json())
     .then(data => {
@@ -39,17 +40,21 @@ export default function Ingridents() {
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
-
+function fetchImages(animal_id, part_id) {
+  fetch('/api/images')  // Update the URL based on your API endpoint
+    .then(response => response.json())
+    .then(data => setImages(data))
+}
   
 
 // filter animals who have data in the ratios
 
  return(
-  <div>
+  <div className='container'>
     {animals.filter(item => item.ratios.length > 0).map(animal => (
-      <>
+      <div className='container'>
         <h2 key={animal.id}>{formatWord(animal.name)}</h2>
-          <section>
+          <section className='partSection'>
             <h3>Organs</h3>
               {/* list of organs for this product */}
               <div className="container">
@@ -58,16 +63,19 @@ export default function Ingridents() {
                   <ProductCard 
                     name={formatWord(item.part)} 
                     desc={`meat/bone/organ: ${item.meat}/${item.bone}/${item.organ}`} 
-                    animal={formatWord(animal.name)}/>)}
+                    animal={formatWord(animal.name)}
+                    
+                    />)}
+                 
                   
                 </div>
               </div>
             </section>
 
-            <section>
+            <section className='partSection'>
             <h3>Cuts</h3>
             <div className="container">
-                <div className='row row-cols-1 row-cols-md-3 g-4'>
+                <div className='row row-cols-1 row-cols-md-3 g-4 ms-auto'>
                   {animal.nonOrgans.map(item => 
                   <ProductCard 
                     name={formatWord(item.part)} 
@@ -78,7 +86,7 @@ export default function Ingridents() {
               </div>
             </section>
 
-      </>
+      </div>
       
     ))}
       
