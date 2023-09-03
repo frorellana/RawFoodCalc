@@ -19,7 +19,6 @@ export default function App() {
     };
 
   // Add the new data item to the data state
-  console.log(newDataItem)
     setSelections([...selections, newDataItem]);
   }
 
@@ -37,8 +36,12 @@ export default function App() {
 
 
   function onDelete(deleteId) {
-    setSelections(selections.filter(item => item.id != deleteId))
-    console.log('i will be displayed', selections)
+    
+    console.log('i am on delete and should be called here are my slect', deleteId, selections)
+    let newSelections = [...selections]
+    let result = newSelections.filter(item => item.id != deleteId)
+    setSelections(result)
+
   }
   return(
     <>

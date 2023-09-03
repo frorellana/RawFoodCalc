@@ -2,10 +2,10 @@ html, body {
   height: 100%;
   width: 100%;
   margin: 0;
-
 }
 
 body {
+  
   padding-top: 8vh;
 }
 
@@ -42,6 +42,9 @@ body {
   justify-content: space-between;
   width: 100%;
   flex: 1; /* Take up available space */
+  background-image: linear-gradient(rgb(54, 96, 54), rgb(195, 255, 195));
+  
+  color: whitesmoke;
 
 
   
@@ -86,6 +89,10 @@ body {
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+.card-body {
+  background-color: rgb(207, 237, 207);
+
 }
 
 

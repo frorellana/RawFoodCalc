@@ -39,7 +39,6 @@ export default function AvaiableIngridents({handleNewSelections, handleIncItems}
             }
           })
         });
-        console.log('data', result)
     
         return setAnimals(result)})
       .catch(error => console.error('Error fetching data:', error));

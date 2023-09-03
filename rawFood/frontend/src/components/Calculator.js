@@ -26,7 +26,6 @@ export default function Calculator({selections}) {
   setTotalMeat(meatSum ? meatPer.toFixed(2) : 0);
   setTotalBone(boneSum ? bonePer.toFixed(2) : 0);
   setTotalOrgan(organSum ? organPer.toFixed(2) : 0);
-  console.log('use effect in calc', selections)
 
   }, [selections])
 
