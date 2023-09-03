@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ProductCard from '../components/ProductCard';
 
 
-export default function AvaiableIngridents() {
+export default function AvaiableIngridents({handleNewSelections, handleIncItems}) {
   const [animals, setAnimals] = useState([]);
   const [images, setImages] = useState([]);
   function formatWord(word) {
@@ -20,38 +20,36 @@ export default function AvaiableIngridents() {
     // Only display if fetching is successful
     // Sample
   
-    fetchImages()
+   
     fetch('/api/animalPartRatio')  // Update the URL based on your API endpoint
     .then(response => response.json())
     .then(data => {
       // For data set returned, create a section for organs and non organs
       // filter animals who have data in the ratios
-          data.forEach((animal) => {
+      const result = data.filter(animal => animal.parts.length > 0)
+          console.log(data.filter(animal => animal.parts > 0))
+          result.forEach((animal) => {
           animal.organs = []
           animal.nonOrgans = []
-          animal.ratios.forEach((item) => {
-            if(item.organ ===  1) {
+          animal.parts.forEach((item) => {
+            if(item.ratio.organ ===  1) {
               animal.organs.push(item);
             } else {
               animal.nonOrgans.push(item);
             }
           })
         });
-        return setAnimals(data)})
+        console.log('data', result)
+    
+        return setAnimals(result)})
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
-function fetchImages(animal_id, part_id) {
-  fetch('/api/images')  // Update the URL based on your API endpoint
-    .then(response => response.json())
-    .then(data => setImages(data))
-}
   
-
 
  return(
   <div className='container'>
-    {animals.filter(item => item.ratios.length > 0).map(animal => (
+    {animals.map(animal => (
       <div className='container'>
         <h2 key={animal.id}>{formatWord(animal.name)}</h2>
           <section className='partSection'>
@@ -59,11 +57,15 @@ function fetchImages(animal_id, part_id) {
               {/* list of organs for this product */}
               <div className="container">
                 <div className='row row-cols-1 row-cols-md-3 g-4'>
-                  {animal.organs.map(item => 
+                  {animal.organs.map(part => 
                   <ProductCard 
-                    name={formatWord(item.part)} 
-                    desc={`meat/bone/organ: ${item.meat}/${item.bone}/${item.organ}`} 
+                    part={formatWord(part.name)} 
+                    ratio={part.ratio} 
                     animal={formatWord(animal.name)}
+                    id={part.ratio.id}
+                    handleNewSelections={handleNewSelections}
+                    path={part.image_path? part.image_path : '/static/images/blank.png'}
+                    handleIncItems={handleIncItems}
                     />)}
                 </div>
               </div>
@@ -73,11 +75,16 @@ function fetchImages(animal_id, part_id) {
             <h3>Cuts</h3>
             <div className="container">
                 <div className='row row-cols-1 row-cols-md-3 g-4 ms-auto'>
-                  {animal.nonOrgans.map(item => 
+                  {animal.nonOrgans.map(part => 
                   <ProductCard 
-                    name={formatWord(item.part)} 
-                    desc={`meat/bone/organ: ${item.meat}/${item.bone}/${item.organ}`} 
-                    animal={formatWord(animal.name)}/>)}
+                    part={formatWord(part.name)} 
+                    ratio={part.ratio} 
+                    animal={formatWord(animal.name)}
+                    handleNewSelections={handleNewSelections}
+                    id={part.ratio.id}
+                    path={part.image_path? part.image_path : '/static/images/blank.png'}
+                    handleIncItems={handleIncItems}
+                    />)}
                   
                 </div>
               </div>

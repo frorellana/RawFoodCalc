@@ -5,42 +5,36 @@ html, body {
 
 }
 
+body {
+  padding-top: 8vh;
+}
+
 #app, #main{
   width: 100%;
   height: 100%;
-  display: flex; /* Add this to make #main a flex container */
-  flex-direction: column; /* Stack children vertically */
-
+  margin: 0;
 }
 
-#mainHeader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* #mainHeader {
   height: 10vh; 
   border-bottom: solid 1px lightgray;
-  width: 100%
-}
-
-
-/* .productCard {
-  width: 500px;
-  height: 100px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 10px;
-  box-shadow: 0px 4px 6px 0px rgba(194,194,194,1);
-  
+  align-items: center;
+  padding: 20px;
+  position: relative;
+ 
 } */
 
-/* #cardText {
-  padding: 10px;
+.badge {
+  position:absolute;
+  margin-top: 0;
+  right: 7px;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-} */
+
+
 
 #frontDisplay {
   display: flex;
@@ -62,15 +56,30 @@ html, body {
 
 .partSection {
   padding: 10px; 
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1vh;
  
 }
 
+.calc {
+  position: sticky;
+}
+.calc h5 {
+  text-align: center;
+}
 
-
-#sidebar {
-  border-left: solid 1px lightgray;
-  min-width: 60vh;
-  padding: 10px;
+.calc p {
+  margin: 2px 1px 0 0;
+}
+#selections {
+  max-height: 65vh;
+  overflow-y: auto;
 }
 
 
@@ -90,7 +99,69 @@ html, body {
 
   padding: 3px 5px!important;
 
+}
 
+.selectionsHeader {
+  height: 8vh; 
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+
+.selectionsHeader h1 {
+  margin: 0;
+}
+
+/* .backArrow {
+  position: absolute;
+  left: 0;
+  font-size: 35px
+} */
+
+/* Styles for larger viewports */
+@media screen and (min-width: 768px) {
+  .right {
+    margin-right: 2vh!important;
+    margin-top: 2vh!important; 
+  }
+  .right .modal-content{
+    height: 96vh;
+    overflow-y: auto;
+    
+  }
+  
  
 }
+
+.right .modal-header {
+  justify-content: center;
+}
+
+.right .modal-header .modal-title {
+  position: relative;
+ 
+}
+
+.right .modal-header .btn-close {
+  position: absolute;
+  right: 0;
+  margin: 1vh;
+}
+
+.selectionInput {
+  width: 36%;
+}
+
+
+
+
+
+
+
+
+
+
 

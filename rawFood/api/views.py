@@ -56,22 +56,53 @@ class ImageDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class AnimalPartRatioView(APIView):
     def get(self, request, *args, **kwargs):
-        animals = Animal.objects.all()
+        animals = Animal.objects.all().order_by('name')
         data = []
 
         for animal in animals:
             animal_data = AnimalSerializer(animal).data
-            ratios = animal.ratio_set.select_related('part')
+            ratios = animal.ratio_set.select_related('part').order_by('part__name')
 
-            ratio_data = []
+            part_data = []
             for ratio in ratios:
-                ratio_data.append({
-                    'part': ratio.part.name,
-                    'meat': ratio.meat,
-                    'bone': ratio.bone,
-                    'organ': ratio.organ
-                })
+                part_info = {
+                        'id': ratio.part.id,
+                        'name': ratio.part.name,
+                        'ratio': {
+                            'id': ratio.id,
+                            'meat': ratio.meat,
+                            'bone': ratio.bone,
+                            'organ': ratio.organ
+                        }
+                    }
+                
+                # Fetch the associated image for the current animal and part
+                try:
+                    image = Image.objects.get(animal=animal, part=ratio.part)
+                    part_info['image_path'] = image.path
+                except Image.DoesNotExist:
+                    part_info['image_path'] = None
 
-            animal_data['ratios'] = ratio_data
+                part_data.append(part_info)
+
+            animal_data['parts'] = part_data
             data.append(animal_data)
+        return Response(data)
+    
+
+class ExtendedRatioView(APIView):
+     def get(self, request, *args, **kwargs):
+        ratios = Ratio.objects.select_related('animal', 'part').order_by('animal__name')
+        data = []
+
+        for ratio in ratios:
+            ratio_data = RatioSerializer(ratio).data
+            animal_data = AnimalSerializer(ratio.animal).data
+            part_data = PartSerializer(ratio.part).data
+
+            ratio_data['animal'] = animal_data  # Append animal name
+            ratio_data['part'] = part_data  # Append animal name
+
+            data.append(ratio_data)
+
         return Response(data)

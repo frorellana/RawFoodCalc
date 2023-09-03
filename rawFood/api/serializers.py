@@ -13,6 +13,7 @@ class PartSerializer(serializers.ModelSerializer):
         fields = ('id', 'name')
     
 class RatioSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Ratio
         fields = ('id', 'animal', 'part', 'meat', 'bone', 'organ')
@@ -22,7 +23,7 @@ class RatioSerializer(serializers.ModelSerializer):
             return super().create(validated_data)
         except IntegrityError:
             raise serializers.ValidationError("This combination of animal and part already exists.")
-    
+        
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image

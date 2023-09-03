@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import AnimalPartRatioView, AnimalListView, AnimalDetailView, PartListView, PartDetailView, ImageListView, ImageDetailView, RatioListView, RatioDetailView
+from .views import AnimalPartRatioView, AnimalListView, AnimalDetailView, PartListView, PartDetailView, ImageListView, ImageDetailView, RatioListView, RatioDetailView, ExtendedRatioView
 
 urlpatterns = [
   path('animals', AnimalListView.as_view()), 
@@ -10,5 +10,6 @@ urlpatterns = [
   path('images/<int:pk>/',ImageDetailView.as_view()),
   path('ratios', RatioListView.as_view()),
   path('ratios/<int:pk>/',RatioDetailView.as_view()),
-  path('animalPartRatio', AnimalPartRatioView.as_view())
+  path('animalPartRatio', AnimalPartRatioView.as_view()),
+  path('extendedRatios', ExtendedRatioView.as_view()),
 ]
