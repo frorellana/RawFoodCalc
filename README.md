@@ -7,6 +7,7 @@ Welcome to the Raw Food Calculator for Cats project! This tool is designed to he
 # Important Note for Users
 
 **Please Read This First**
+
 This application is meant to faciliate the hassle of selecting and calcuating ingridents in order to make a balanced raw meal for cats. It is not meant to be used alone. Research on what a healthy raw diet contatins must be done.
 A raw diet that is unbalanced and, frankly, made with little research can be very dangerous for your cat. When done right, it can be a very healthy choice.
 
