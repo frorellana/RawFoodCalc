@@ -39,14 +39,14 @@ export default function ProductCard({part = 'Product', path,ratio, animal, id, h
   }
   return(
     <div className="col">
-      <div className="card h-100">
+      <div id='wholeCard' className="card h-100">
         <div className="card-body">
             <h5 className="card-title">{part}</h5>
             <p className="card-text">{`Meat / Bone / Organ : ${ratio.meat} / ${ratio.bone} / ${ratio.organ}`}</p>
-            <Button variant="primary" className="stretched-link" onClick={handleShow}>
+            <Button id='addBtn' variant="primary" className="stretched-link" onClick={handleShow}>
               Add
             </Button>
-            <Modal show={show} onHide={handleClose} animation={false}>
+            <Modal id='cardModal' show={show} onHide={handleClose} animation={false}>
               <Modal.Header closeButton>
                 <Modal.Title>{`${animal} - ${part}`}</Modal.Title>
               </Modal.Header>

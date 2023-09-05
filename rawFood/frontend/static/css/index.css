@@ -5,8 +5,8 @@ html, body {
 }
 
 body {
-  
-  padding-top: 8vh;
+  background-color: #fff;
+  padding-top: 70px;
 }
 
 #app, #main{
@@ -15,46 +15,44 @@ body {
   margin: 0;
 }
 
-/* #mainHeader {
-  height: 10vh; 
-  border-bottom: solid 1px lightgray;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  position: relative;
- 
-} */
+#navTitle {
+  color: #6b6b6b;
+}
+#navTitle:hover {
+  color: #323232;
+}
 
 .badge {
   position:absolute;
   margin-top: 0;
-  right: 7px;
+  left: 20px;  
 }
 
-
-
+#cartIcon{
+  position: absolute;
+  left: -5px;
+  font-size: 32px;
+}
+#cartLink {
+  position: absolute;
+  margin-left: -45px;
+  margin-top: -30px;
+}
 
 #frontDisplay {
   display: flex;
-  align-items: stretch; /* Stretch children vertically */
+  align-items: stretch;
   justify-content: space-between;
   width: 100%;
-  flex: 1; /* Take up available space */
-  background-image: linear-gradient(rgb(54, 96, 54), rgb(195, 255, 195));
-  
-  color: whitesmoke;
-
-
-  
+  flex: 1; 
+  color: #333333
 }
+
 #content {
   display: flex;
   flex-direction: column;
   padding: 10px;
   flex: 1;
-  
 }
 
 .partSection {
@@ -67,12 +65,12 @@ body {
   justify-content: space-between;
   height: 100%;
   padding: 1vh;
- 
 }
 
 .calc {
   position: sticky;
 }
+
 .calc h5 {
   text-align: center;
 }
@@ -80,32 +78,37 @@ body {
 .calc p {
   margin: 2px 1px 0 0;
 }
+
 #selections {
   max-height: 65vh;
   overflow-y: auto;
 }
 
+#wholeCard {
+  border-color: #eee;
+}
 
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
-.card-body {
-  background-color: rgb(207, 237, 207);
 
+.card-body {
+  background-color: #eee;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  border-radius: 3px 3px 0px 0px; 
 }
 
+#addBtn {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
 
-
-
-.container{
- 
-  
+.container{ 
   margin-left: 0!important;
   margin-right: 0!important;
-
   padding: 3px 5px!important;
-
 }
 
 .selectionsHeader {
@@ -115,7 +118,6 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-
 }
 
 .selectionsHeader h1 {
@@ -136,11 +138,8 @@ body {
   }
   .right .modal-content{
     height: 96vh;
-    overflow-y: auto;
-    
-  }
-  
- 
+    overflow-y: auto; 
+  } 
 }
 
 .right .modal-header {
@@ -149,7 +148,6 @@ body {
 
 .right .modal-header .modal-title {
   position: relative;
- 
 }
 
 .right .modal-header .btn-close {
@@ -161,14 +159,3 @@ body {
 .selectionInput {
   width: 36%;
 }
-
-
-
-
-
-
-
-
-
-
-

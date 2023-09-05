@@ -23,15 +23,15 @@ export default function MainContainer({handleSelectionUpdate, handleNewSelection
  
   return(
     <div id='main'>
-       <Navbar expand="lg" className="bg-body-tertiary" fixed='top'>
+       <Navbar id='navbar' expand="lg" className="bg-body-tertiary" fixed='top'>
         <Container fluid>
-          <Navbar.Brand>Raw Food Calculator for Cats</Navbar.Brand>
+          <Navbar.Brand id='navTitle' href='#'>Raw Food Calculator for Cats</Navbar.Brand>
           {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className='justify-content-'> */}
             <Nav>
-              <Nav.Link href='#'className="me-0 p-2" onClick={handleShow}>
+              <Nav.Link id="cartLink" href='#'className="me-0" onClick={handleShow}>
               
-              <i id='cart' className="bi bi-cart-fill h1"></i>
+              <i id='cartIcon' className="bi bi-cart-fill h1"></i>
               {totalItems !== 0 ? <span className="badge rounded-pill badge-notification bg-danger">{totalItems}</span> : <></>}
             
               
