@@ -8,7 +8,7 @@ Welcome to the Raw Food Calculator for Cats project! This tool is designed to he
 
 **Please Read This First**
 
-This application is meant to faciliate the hassle of selecting and calcuating ingridents in order to make a balanced raw meal for cats. It is not meant to be used alone. Research on what a healthy raw diet contatins must be done.
+This application is meant to faciliate the hassle of selecting and calcuating ingredients in order to make a balanced raw meal for cats. It is not meant to be used alone. Research on what a healthy raw diet contatins must be done.
 A raw diet that is unbalanced and, frankly, made with little research can be very dangerous for your cat. When done right, it can be a very healthy choice.
 
 This project is under active development, and some features may be incomplete or subject to change.
@@ -97,8 +97,8 @@ Now you should be able to access the application at http://localhost:8000/
 ## Usage
 
 This application allows you to calculate and manage raw food ratios for your cat. You can select different parts from vsrious available animals, and input the total amount of pounds you want to use. 
-The cart will contain all the ingridents you selected with the corresponding amounts. You can adjust the amounts in the cart and delete any ingridents you no longer want. 
-At the bottom of the cart there is a ratio section that calculates whether the  meat, bone and organ amount of the all ingridents are abalanced according to the 80 / 10 / 10 ratio. 
+The cart will contain all the ingredients you selected with the corresponding amounts. You can adjust the amounts in the cart and delete any ingredients you no longer want. 
+At the bottom of the cart there is a ratio section that calculates whether the  meat, bone and organ amount of the all ingredients are abalanced according to the 80 / 10 / 10 ratio. 
 
 
 ## API Endpoints

@@ -1,5 +1,5 @@
 import React from "react";
-import Ingrident from "../components/Ingrident";
+import Ingredient from "../components/Ingredient";
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from "react-router-dom";
 
@@ -15,7 +15,7 @@ export default function Selection({selections, onDelete, handleDecItems, handleS
 
       </header> */}
       <ListGroup>
-        {selections.map(item => <Ingrident handleSelectionUpdate={handleSelectionUpdate} id={item.id} amount={item.amount} selectedIngrident={`${item.animal} - ${item.part}`} onDelete={onDelete} handleDecItems={handleDecItems}/>)}
+        {selections.map(item => <Ingredient handleSelectionUpdate={handleSelectionUpdate} id={item.id} amount={item.amount} selectedingredient={`${item.animal} - ${item.part}`} onDelete={onDelete} handleDecItems={handleDecItems}/>)}
       </ListGroup>
     </section>
   );

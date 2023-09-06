@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ProductCard from '../components/ProductCard';
 
 
-export default function AvaiableIngridents({handleNewSelections, handleIncItems}) {
+export default function AvaiableIngredients({handleNewSelections, handleIncItems}) {
   const [animals, setAnimals] = useState([]);
   const [images, setImages] = useState([]);
   function formatWord(word) {

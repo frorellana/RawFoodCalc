@@ -3,8 +3,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import CloseButton from 'react-bootstrap/CloseButton';
 
 
-export default function Ingrident({id, amount, selectedIngrident, onDelete, handleDecItems, handleSelectionUpdate}) {
-  // const [ingridents, setIngridents] = useState([]);
+export default function Ingredient({id, amount, selectedingredient, onDelete, handleDecItems, handleSelectionUpdate}) {
+  // const [ingredients, setingredients] = useState([]);
   function handleOnDelete() {
 
     onDelete(id);
@@ -36,7 +36,7 @@ export default function Ingrident({id, amount, selectedIngrident, onDelete, hand
   return(
     <ListGroup.Item>
       <div className="d-flex justify-content-between">
-      {selectedIngrident}
+      {selectedingredient}
 
       <div className="d-flex justify-content-end selectionInput">
         <div className="input-group">
