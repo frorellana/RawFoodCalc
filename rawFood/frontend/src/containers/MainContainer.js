@@ -5,6 +5,14 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Modal, Button, Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
 
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCat } from '@fortawesome/free-solid-svg-icons'
+
+
+
+
+
+
 
 
 export default function MainContainer({handleSelectionUpdate, handleNewSelections, selections, onDelete}) {
@@ -25,7 +33,10 @@ export default function MainContainer({handleSelectionUpdate, handleNewSelection
     <div id='main'>
        <Navbar id='navbar' expand="lg" className="bg-body-tertiary" fixed='top'>
         <Container fluid>
-          <Navbar.Brand id='navTitle' href='#'>Raw Food Calculator for Cats</Navbar.Brand>
+          <Navbar.Brand id='navTitle' href='#'>
+          <FontAwesomeIcon icon={faCat} style={{color: "#a55f84", paddingRight: '10px', }} />
+          Raw Food Calculator for Cats
+          </Navbar.Brand>
           {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className='justify-content-'> */}
             <Nav>

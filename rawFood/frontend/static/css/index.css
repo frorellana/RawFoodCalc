@@ -44,7 +44,7 @@ body {
   align-items: stretch;
   justify-content: space-between;
   width: 100%;
-  flex: 1; 
+  height: 100%;
   color: #333333
 }
 
@@ -53,6 +53,11 @@ body {
   flex-direction: column;
   padding: 10px;
   flex: 1;
+  height: 100%;
+}
+
+#content h3 {
+  align-self: center;
 }
 
 .partSection {
@@ -101,14 +106,28 @@ body {
 
 #addBtn {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  /* background-color: #337ab7;
+  border-color: #2e6da4; */
+  background-color: #a55f84;
+  border-color: #a2567f;
 }
 
 .container{ 
   margin-left: 0!important;
   margin-right: 0!important;
   padding: 3px 5px!important;
+}
+
+#loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: xx-large;
+}
+
+section {
+  height: 100%;
 }
 
 .selectionsHeader {
