@@ -20,8 +20,6 @@ This project is under active development, and some features may be incomplete or
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
-    - [Backend Setup](#backend-setup)
-    - [Frontend Setup](#frontend-setup)
 - [Usage](#usage)
 - [API Endpoints](api-endpoints)
 - [Contributing](#contributing)
@@ -40,14 +38,8 @@ Cats are obligate carnivores, and a raw food diet can provide them with essentia
 ## Prerequisites
 Before you can run this Django-React app, make sure you have the following software and tools installed:
 
-1. Python: This app uses Django on the backend, which requires Python. You can download Python from python.org or use your system's package manager.
-   Note: Depending on your system, you may need to use `python3` instead of `python` to run Python 3.
+- Docker (https://www.docker.com/): Make sure Docker is installed and running on your machine.
 
-2. Pip: Pip is a package manager for Python. You can check if you have Pip installed by running: `pip --version`
-   Note: Depending on your system, you may need to use `pip3` instead of `pip`.
-
-3. Node.js and npm: This app's frontend is built using React, which requires Node.js and npm (Node Package Manager). You can download Node.js from nodejs.org.
-   To check if Node.js and npm are installed, run: `node --version` `npm --version`
 
 ## Getting Started
 
@@ -58,39 +50,18 @@ To get started with the Raw Food Calculator for Cats, follow these steps:
    ```
    git clone https://github.com/frorellana/rawFoodCalc.git
    ```
-### Backend Setup
 
-1. Navigate to the backend directory:
+2. Build then Docker containers:
 
    ```
-   cd rawFood
+   docker-compose build
    ```
-2. Install Django and required Python packages:
+3. Run the application:
     ```
-    pip install -r requirements.txt
-    ```
-3. Apply database migrations:
-   ```
-   python manage.py migrate
-   ```
-5. Run the Django development server:
-    ```
-    python manage.py runserver
+    docker-compose up -d
     ```
     
-### Frontend Setup
-1. Open a new terminal window, navigate to the frontend directory:
-   ```
-   cd rawFood/frontend
-   ```
-2. install Node.js dependencies:
-   ```
-   npm i
-   ```
-3. Start the React development server:
-   ```
-   npm run dev
-   ```
+
 Now you should be able to access the application at http://localhost:8000/
 
 
@@ -103,7 +74,7 @@ At the bottom of the cart there is a ratio section that calculates whether the  
 
 ## API Endpoints
 
-Here are the available API endpoints for this project:
+Here are the available API endpoints for this project at http://localhost:8000/[endpoint]:
 
 - **Animals**
   - `GET /api/animals`: Retrieve a list of animals.
