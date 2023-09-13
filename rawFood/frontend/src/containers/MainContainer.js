@@ -31,7 +31,7 @@ export default function MainContainer({handleSelectionUpdate, handleNewSelection
  
   return(
     <div id='main'>
-       <Navbar id='navbar' expand="lg" className="bg-body-tertiary" fixed='top'>
+       <Navbar id='navbar' expand="lg" className="bg-body-tertiary shadow-sm" fixed='top'>
         <Container fluid>
           <Navbar.Brand id='navTitle' href='#'>
           <FontAwesomeIcon icon={faCat} style={{color: "#a55f84", paddingRight: '10px', }} />
