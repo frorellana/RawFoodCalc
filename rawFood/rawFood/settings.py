@@ -86,10 +86,10 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        "NAME": os.environ.get("POSTGRES_DB"),
-        "USER": os.environ.get("POSTGRES_USER"),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
-        "HOST": 'berry.db.elephantsql.com',
+        "NAME": 'postgres',
+        "USER": 'postgres',
+        "PASSWORD": "postgres",
+        "HOST": 'db',
         "PORT": 5432,
         
     }

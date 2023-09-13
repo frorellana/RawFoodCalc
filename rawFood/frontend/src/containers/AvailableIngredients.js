@@ -32,7 +32,6 @@ export default function AvaiableIngredients({handleNewSelections, handleIncItems
       // For data set returned, create a section for organs and non organs
       // filter animals who have data in the ratios
       const result = data.filter(animal => animal.parts.length > 0)
-          console.log(data.filter(animal => animal.parts > 0))
           result.forEach((animal) => {
           animal.organs = []
           animal.nonOrgans = []
@@ -85,7 +84,7 @@ export default function AvaiableIngredients({handleNewSelections, handleIncItems
              <section className='partSection'>
                <h5>Cuts</h5>
                <div className="container">
-                   <div className='row row-cols-1 row-cols-md-3 g-4 ms-auto'>
+                   <div className='row row-cols-1 row-cols-md-3 g-4'>
                      {animal.nonOrgans.map(part => 
                      <ProductCard 
                        part={formatWord(part.name)} 
